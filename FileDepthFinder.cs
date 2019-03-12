@@ -13,6 +13,7 @@ namespace MaximumDepthApp
 
             try
             {
+                // If current file is "deeper" then the previous one it is the "deepest" file at the moment - when all files will be checked the deepest file and its depth be known
                 foreach (string file in AllFiles)
                 {
                     if (Path.GetFullPath(file).Split(Path.DirectorySeparatorChar).Length > maximumDepth)

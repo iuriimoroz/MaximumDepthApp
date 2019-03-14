@@ -7,16 +7,16 @@ namespace MaximumDepthApp
     {
         static void Main(string[] args)
         {
-            string path = ConsoleArgumentsHandler.CommandLineOptions(args);
+            string path = ConsoleArgumentsHandler.CommandLineOptions(args); // When program starts command line arguments go to the dedicated method
 
-            if (path == null) // User will be prompted to enter required --path option
+            if (path == null) // User will be prompted to enter required --path option if he missed to do it
             {
                 Console.WriteLine("Missing required option --path");
                 Console.WriteLine("Try `MaximumDepthApp --help' for more information.");
             }
-            if (Directory.Exists(path) && path != null && path != "help") // If everything is ok - the program will start searching for the file in maximum depth
+            if (Directory.Exists(path)) // When user provides correct directory - the program starts searching for the file in maximum depth
             {
-                FileDepthFinder.FindFileAtMaximumDepth(path);
+                FileAtMaximumDepthFinder.FindFileAtMaximumDepth(path);
             }
             if (!Directory.Exists(path) && path != null && path != "help") // This block will be executed when user provided incorrect source folder path
             {

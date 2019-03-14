@@ -31,7 +31,7 @@ namespace MaximumDepthApp
             }
             catch (OptionException e)
             {
-                path = "help"; // "help" value assigned to the path for proper help displaying for different cases
+                path = "help"; // "help" value assigned to the path just for convinient handling of different cases e.g. when path == "help" the program will not show to the user that such folder was not found 
                 Console.Write("MaximumDepthApp: ");
                 Console.WriteLine(e.Message);
                 Console.WriteLine("Try `MaximumDepthApp --help' for more information.");
@@ -45,7 +45,6 @@ namespace MaximumDepthApp
 
             return path;
         }
-
 
         // Method which displays command line options help
         static void ShowHelp(OptionSet options)
